@@ -26,5 +26,11 @@ test:
   database: engativarails #db/test.sqlite3
 
 production:
-  <<: *default
-  database: engativarails #db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: sample_postgres_production
+  pool: 5
+  username: sample_postgres
+  password:
+  #<<: *default
+  #database: engativarails #db/production.sqlite3
