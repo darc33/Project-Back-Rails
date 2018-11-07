@@ -28,9 +28,9 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: sample_postgres_production
+  database: d4uff0vbjrrlkl
   pool: 5
-  username: sample_postgres
-  password:
+  username: upujtcxqiltwph
+  password: 97478910ac4ca398875ec891cb93e5821f4920028d6ca6e640479249165a54b6
   #<<: *default
   #database: engativarails #db/production.sqlite3
