@@ -20,12 +20,16 @@ ActiveRecord::Schema.define(version: 2018_11_07_025813) do
     t.datetime "initial_datetime"
     t.datetime "final_datetime"
     t.text "imagen"
+    t.bigint "user_id"
+    t.bigint "typeincident_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["typeincident_id"], name: "index_incidents_on_typeincident_id"
+    t.index ["user_id"], name: "index_incidents_on_user_id"
   end
 
 # Could not dump table "registries" because of following StandardError
-#   Unknown type 'geometry' for column 'linestring'
+#   Unknown type 'polygon' for column 'linestring'
 
   create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -47,8 +51,14 @@ ActiveRecord::Schema.define(version: 2018_11_07_025813) do
     t.string "gender"
     t.string "entity"
     t.string "cedula"
+    t.bigint "role_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
+  add_foreign_key "incidents", "typeincidents"
+  add_foreign_key "incidents", "users"
+  add_foreign_key "registries", "users"
+  add_foreign_key "users", "roles"
 end

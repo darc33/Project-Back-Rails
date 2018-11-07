@@ -22,7 +22,8 @@
 		phone: Faker::PhoneNumber.subscriber_number(7),
 		gender: Faker::Gender.binary_type,
 		entity: Faker::Company.name,
-		cedula: Faker::PhoneNumber.subscriber_number(7)
+		cedula: Faker::PhoneNumber.subscriber_number(7),
+		role_id: Faker::Number.between(1,3)
 	})
 
 	Incident.create({
@@ -30,13 +31,16 @@
 		description: Faker::Lorem.sentence,
 		status: Faker::PhoneNumber.subscriber_number(2),
 		initial_datetime: Faker::Time.between(DateTime.now - 1, DateTime.now),
-		final_datetime: Faker::Time.between(DateTime.now - 1, DateTime.now)
+		final_datetime: Faker::Time.between(DateTime.now - 1, DateTime.now),
+		user_id: Faker::Number.between(1,3),
+		typeincident_id: Faker::Number.between(1,3)
 	})
 
 	Registry.create({
-		#type: Faker::Lorem.word,
+		type_r: Faker::Lorem.word,
 		initial_direction: Faker::Address.street_address, 
 		final_direction: Faker::Address.street_address, 
-		no_consultas: Faker::PhoneNumber.subscriber_number(2)
+		no_consultas: Faker::PhoneNumber.subscriber_number(2),
+		user_id: Faker::Number.between(1,3)
 	})
 end

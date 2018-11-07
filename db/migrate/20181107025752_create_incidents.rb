@@ -9,6 +9,9 @@ class CreateIncidents < ActiveRecord::Migration[5.2]
 			t.datetime :final_datetime
 			t.text :imagen
 
+			t.references :user, foreign_key: true
+			t.references :typeincident, foreign_key: true
+
 
 
 			t.timestamps

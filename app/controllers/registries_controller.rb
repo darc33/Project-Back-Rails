@@ -37,7 +37,7 @@ class RegistriesController < ApplicationController
 
     private
     	def registry_params
-    		params.permit(:type, :initial_direction, :final_direction, :no_consultas, :linestring )
+    		params.permit(:type_r, :initial_direction, :final_direction, :no_consultas, :linestring, :user_id )
     	
     	end
 end

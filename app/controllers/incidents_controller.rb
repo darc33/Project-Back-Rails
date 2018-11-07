@@ -37,7 +37,7 @@ protect_from_forgery
 
     private
     	def incident_params
-    		params.permit(:name, :description, :coordinate, :status, :initial_datetime, :final_datetime, :imagen)
+    		params.permit(:name, :description, :coordinate, :status, :initial_datetime, :final_datetime, :imagen, :user_id, :typeincident_id)
     	
     	end
 end

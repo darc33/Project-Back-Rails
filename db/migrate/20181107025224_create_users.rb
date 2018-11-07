@@ -7,6 +7,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
 			t.string :gender
 			t.string :entity
 			t.string :cedula
+
+			t.references :role, foreign_key: true
 			
 
 			t.timestamps

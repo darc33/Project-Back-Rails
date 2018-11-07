@@ -6,6 +6,8 @@ class CreateRegistries < ActiveRecord::Migration[5.2]
 			t.text :final_direction
 			t.integer :no_consultas
 			t.column :linestring, 'polygon'
+
+			t.references :user, foreign_key: true
 			
 
 			t.timestamps
