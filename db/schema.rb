@@ -12,29 +12,41 @@
 
 ActiveRecord::Schema.define(version: 2018_11_07_025813) do
 
-  create_table "incidents", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "incidents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "coordinate"
+    t.integer "status"
+    t.datetime "initial_datetime"
+    t.datetime "final_datetime"
+    t.text "imagen"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "registries", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+# Could not dump table "registries" because of following StandardError
+#   Unknown type 'geometry' for column 'linestring'
+
+  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "typeincidents", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "typeincidents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "lastname"
+    t.integer "phone"
+    t.string "gender"
+    t.string "entity"
+    t.string "cedula"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :roles
   resources :users
   resources :incidents
-  resources :registriess
+  resources :registries
 
   
 end
