@@ -1,0 +1,2 @@
+class Typeincident < ApplicationRecord
+end
