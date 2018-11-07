@@ -16,14 +16,17 @@
 		name: Faker::Company.profession
 	})
 
-	User.create({
+	User.create!({
 		name: Faker::Name.first_name,
 		lastname: Faker::Name.last_name,
 		phone: Faker::PhoneNumber.subscriber_number(7),
 		gender: Faker::Gender.binary_type,
 		entity: Faker::Company.name,
 		cedula: Faker::PhoneNumber.subscriber_number(7),
-		role_id: Faker::Number.between(1,3)
+		role_id: Faker::Number.between(1,3),
+		email: Faker::Internet.email,
+		password: "password", #Faker::Internet.password(8),
+		reset_password_token: Faker::Lorem.word
 	})
 
 	Incident.create({

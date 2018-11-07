@@ -37,7 +37,7 @@ protect_from_forgery
 
     private
     	def user_params
-    		params.permit(:name, :lastname, :phone, :gender, :entity, :cedula, :role_id)
+    		params.permit(:name, :lastname, :phone, :gender, :entity, :cedula, :role_id, :email, :encrypted_password, :reset_password_token)
     	
     	end
 end
