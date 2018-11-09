@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mviccalzad: 1
+  mviccat: MyText
+  mvitcla: 1
+
+two:
+  mviccalzad: 1
+  mviccat: MyText
+  mvitcla: 1

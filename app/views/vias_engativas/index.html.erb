@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vias Engativas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mviccalzadad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vias_engativas.each do |vias_engativa| %>
+      <tr>
+        <td><%= vias_engativa.mviccalzadad %></td>
+        <td><%= link_to 'Show', vias_engativa %></td>
+        <td><%= link_to 'Edit', edit_vias_engativa_path(vias_engativa) %></td>
+        <td><%= link_to 'Destroy', vias_engativa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vias Engativa', new_vias_engativa_path %>

@@ -1,0 +1,32 @@
+<%= form_with(model: street, local: true) do |form| %>
+  <% if street.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(street.errors.count, "error") %> prohibited this street from being saved:</h2>
+
+      <ul>
+      <% street.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :mviccalzad %>
+    <%= form.number_field :mviccalzad %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mviccat %>
+    <%= form.text_area :mviccat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mvitcla %>
+    <%= form.number_field :mvitcla %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

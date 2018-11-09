@@ -15,6 +15,8 @@
 	Role.create({
 		name: Faker::Company.profession
 	})
+end
+5.times do
 
 	User.create!({
 		name: Faker::Name.first_name,

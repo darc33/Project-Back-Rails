@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_131139) do
+ActiveRecord::Schema.define(version: 2018_11_09_135403) do
 
   create_table "incidents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,21 @@ ActiveRecord::Schema.define(version: 2018_11_07_131139) do
     t.datetime "updated_at", null: false
   end
 
+# Could not dump table "sites" because of following StandardError
+#   Unknown type 'geometry' for column 'geom'
+
+  create_table "spatials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "auth_name"
+    t.integer "auth_srid"
+    t.text "srtext"
+    t.text "proj4text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+# Could not dump table "streets" because of following StandardError
+#   Unknown type 'geometry' for column 'geom'
+
   create_table "typeincidents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -62,6 +77,16 @@ ActiveRecord::Schema.define(version: 2018_11_07_131139) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
+  end
+
+  create_table "vias_engativa", id: :integer, unsigned: true, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "mviccalzadad", null: false
+  end
+
+  create_table "vias_engativas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "mviccalzadad"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "incidents", "typeincidents"
