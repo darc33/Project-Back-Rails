@@ -4,7 +4,9 @@ class ViasEngativasController < ApplicationController
   # GET /vias_engativas
   # GET /vias_engativas.json
   def index
-    @vias_engativas = ViasEngativa.all
+    #@vias_engativas = ViasEngativa.all
+    query = "SELECT gid, geom FROM vias_engativas"
+    @vias_engativas = ActiveRecord::Base.connection.execute(query)
     render json: {data:@vias_engativas},status: :ok 
   end
 

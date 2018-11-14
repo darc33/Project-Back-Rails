@@ -3,6 +3,9 @@ protect_from_forgery
 
 	def index
        users = User.all;
+       
+       #query = "SELECT name FROM users"
+       #@users = ActiveRecord::Base.connection.execute(query)
        render json: {data:users},status: :ok 
     end
 
