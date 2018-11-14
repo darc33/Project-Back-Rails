@@ -5,7 +5,7 @@ class ViasEngativasController < ApplicationController
   # GET /vias_engativas.json
   def index
     #@vias_engativas = ViasEngativa.all
-    query = "SELECT gid, ST_AsText(geom) FROM vias_engativas"
+    query = "SELECT ST_X((dp).geom) AS lon, ST_Y((dp).geom) AS lat FROM (SELECT ST_DumpPoints(geom) AS dp from vias_engativas) AS qr"
     @vias_engativas = ActiveRecord::Base.connection.execute(query)
     render json: {data:@vias_engativas},status: :ok 
   end
